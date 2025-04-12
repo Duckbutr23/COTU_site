@@ -3,24 +3,14 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
-  background-image: url('bg_twilight.jpg');
+  background-image: url('bg_final_starry.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: #00f5ff;
   margin: 0;
   padding: 0;
-}
-
-header {
-  background-color: rgba(0, 0, 50, 0.9);
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 0 15px #00ffff;
 }
 
 header h1 {
@@ -103,6 +93,12 @@ main p, a {
   text-align: center;
 }
 
+.footer-logo {
+  max-width: 200px;
+  margin: 20px auto;
+  display: block;
+}
+
 footer {
   text-align: center;
   padding: 20px;
@@ -110,11 +106,4 @@ footer {
   font-size: 0.9em;
   color: #888;
   box-shadow: 0 0 10px #00ffff;
-}
-
-
-.footer-logo {
-  max-width: 200px;
-  margin: 20px auto;
-  display: block;
 }
