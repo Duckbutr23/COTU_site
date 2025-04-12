@@ -1,44 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 body {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #0e0e0e;
-  color: #00ffcc;
+  font-family: 'Orbitron', sans-serif;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat, #000;
+  color: #00f5ff;
   margin: 0;
   padding: 0;
-}
-header {
-  background-color: #111;
-  padding: 20px;
   text-align: center;
 }
+
+header {
+  background-color: rgba(0, 0, 50, 0.9);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px #00ffff;
+}
+
 header h1 {
   margin: 0;
-  font-size: 2.5em;
-  text-shadow: 2px 2px 2px #444;
+  font-size: 3em;
+  text-shadow: 0 0 8px #ff00ff;
 }
+
 nav {
   display: flex;
   justify-content: center;
-  background-color: #222;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 50, 0.8);
   padding: 10px;
+  box-shadow: 0 0 10px #00ffff;
 }
+
 nav a {
-  color: #00ffcc;
+  color: #00f5ff;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
 }
+
 nav a:hover {
-  text-decoration: underline;
+  color: #ff00ff;
+  text-shadow: 0 0 8px #ff00ff;
 }
+
 main {
   padding: 40px;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
+  text-align: center;
 }
+
+main h2, main h3 {
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+main p, a {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+img {
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+  border-radius: 10px;
+  margin: 20px 0;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #00ffcc;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff;
+}
+
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #111;
+  background-color: rgba(0, 0, 50, 0.9);
   font-size: 0.9em;
-  color: #555;
+  color: #888;
+  box-shadow: 0 0 10px #00ffff;
 }
