@@ -310,3 +310,38 @@ body.light-theme .divider {
 body.light-theme #backToTop {
   background-color: #cc0066 !important;
 }
+
+/* === SECRET PANELS === */
+.secret-panel {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.95);
+  color: #00f5ff;
+  font-family: monospace;
+  font-size: 1.2em;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 20px #cc00ff;
+  z-index: 9999;
+  animation: glitchFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes glitchFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* === GLITCH EFFECT === */
+.glitching {
+  animation: screenGlitch 0.5s ease-in-out;
+}
+
+@keyframes screenGlitch {
+  0%, 100% { filter: none; }
+  25% { filter: invert(1) contrast(2); }
+  50% { filter: hue-rotate(90deg); }
+  75% { transform: scale(1.02) rotate(1deg); }
+}
