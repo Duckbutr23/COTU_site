@@ -34,3 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => trail.remove(), 300);
   });
 });
+
+// Parallax Scroll Effect
+document.addEventListener("scroll", function () {
+  const layer = document.getElementById("parallax-layer");
+  const offset = window.pageYOffset;
+  if (layer) {
+    layer.style.transform = `translateY(${offset * 0.3}px) scale(1.5)`;
+  }
+});

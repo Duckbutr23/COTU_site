@@ -187,3 +187,52 @@ body {
   opacity: 0.5;
   z-index: 9998;
 }
+
+/* Gradient Text on Title */
+h1 {
+  background: linear-gradient(90deg, #00f5ff, #cc00ff, #00f5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-glow 5s infinite linear;
+  background-size: 300% 100%;
+}
+
+@keyframes gradient-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typewriter effect for h2 */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
+}
+h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #00f5ff;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite;
+}
+
+/* Parallax background via perspective + tilt on scroll */
+body {
+  perspective: 1000px;
+}
+.parallax {
+  transform: translateZ(-1px) scale(1.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}
