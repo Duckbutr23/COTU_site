@@ -11,11 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Back to Top
   const topBtn = document.getElementById("backToTop");
   window.onscroll = function () {
-    topBtn.style.display = (document.documentElement.scrollTop > 100) ? "block" : "none";
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
   };
-  topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  topBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-  // Custom Cursor Trail
+  // Custom Cursor + Trail
   const cursor = document.getElementById("cursor");
   document.addEventListener("mousemove", e => {
     cursor.style.top = e.clientY + "px";
@@ -27,21 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(trail);
     setTimeout(() => trail.remove(), 300);
   });
+});
 
-  // Parallax
+// Parallax Scroll Effect
+document.addEventListener("scroll", function () {
   const layer = document.getElementById("parallax-layer");
-  document.addEventListener("scroll", () => {
-    if (layer) {
-      const offset = window.pageYOffset;
-      layer.style.transform = `translateY(${offset * 0.3}px) scale(1.5)`;
-    }
-  });
-
-  // Theme Toggle
-  const themeBtn = document.getElementById("themeToggle");
-  themeBtn.onclick = () => {
-    document.body.classList.toggle("light-theme");
-    document.body.classList.toggle("dark-theme");
-  };
-  document.body.classList.add("dark-theme");
+  const offset = window.pageYOffset;
+  if (layer) {
+    layer.style.transform = `translateY(${offset * 0.3}px) scale(1.5)`;
+  }
 });

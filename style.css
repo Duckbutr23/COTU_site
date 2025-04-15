@@ -3,14 +3,108 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
+  color: #00f5ff;
   margin: 0;
   padding: 0;
-  color: #00f5ff;
-  cursor: none;
-  perspective: 1000px;
 }
 
-/* Floating Logo */
+header {
+  background-color: rgba(0, 0, 50, 0.9);
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Audiowide', cursive;
+  font-size: 3em;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 50, 0.8);
+  padding: 10px;
+}
+
+@keyframes pulse {
+  0%   { text-shadow: 0 0 5px #00f5ff; }
+  50%  { text-shadow: 0 0 20px #00ffff, 0 0 30px #00f5ff; }
+  100% { text-shadow: 0 0 5px #00f5ff; }
+}
+
+nav a {
+  color: #00f5ff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+main {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+main h2, main h3 {
+  text-align: center;
+}
+
+.show-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.show-image {
+  flex: 1;
+  text-align: right;
+  padding: 10px;
+}
+
+.show-image img {
+  width: 250px;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+  border-radius: 10px;
+}
+
+.show-text {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 50, 0.9);
+  font-size: 0.9em;
+  color: #888;
+}
+
+
+
+.divider {
+  height: 4px;
+  margin: 20px auto;
+  max-width: 80%;
+  border-radius: 2px;
+  background: #ff00ff;
+  animation: pulse-divider 2s infinite ease-in-out;
+}
+
+@keyframes pulse-divider {
+  0%   { box-shadow: 0 0 5px #ff00ff; }
+  50%  { box-shadow: 0 0 20px #ff00ff, 0 0 30px #cc00ff; }
+  100% { box-shadow: 0 0 5px #ff00ff; }
+}
+
+
+
 .floating-logo {
   position: fixed;
   top: 20px;
@@ -20,57 +114,57 @@ body {
   opacity: 0.9;
   transition: transform 0.3s ease;
 }
+
 .floating-logo:hover {
   transform: scale(1.05);
   opacity: 1;
 }
 
-/* Divider */
-.divider {
-  height: 4px;
-  margin: 20px auto;
-  max-width: 80%;
-  border-radius: 2px;
-  background: #ff00ff;
-  animation: pulse-divider 2s infinite ease-in-out;
-}
-@keyframes pulse-divider {
-  0%   { box-shadow: 0 0 5px #ff00ff; }
-  50%  { box-shadow: 0 0 20px #ff00ff, 0 0 30px #cc00ff; }
-  100% { box-shadow: 0 0 5px #ff00ff; }
+/* Neon Flicker for Headers */
+@keyframes flicker {
+  0%   { text-shadow: 0 0 2px #ff00ff; }
+  10%  { text-shadow: 0 0 4px #ff00ff, 0 0 10px #ff00ff; }
+  20%  { text-shadow: 0 0 2px #ff00ff; }
+  30%  { text-shadow: 0 0 8px #ff00ff, 0 0 20px #cc00cc; }
+  100% { text-shadow: 0 0 6px #ff00ff; }
 }
 
-/* Gradient H1 */
-h1 {
-  background: linear-gradient(90deg, #00f5ff, #cc00ff, #00f5ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-glow 5s infinite linear;
-  background-size: 300% 100%;
-}
-@keyframes gradient-glow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+h1, h2 {
+  animation: flicker 2s infinite;
 }
 
-/* Typewriter H2 */
-h2 {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid #00f5ff;
-  width: 0;
-  animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite;
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink {
-  50% { border-color: transparent }
+/* Cosmic Hover Effects */
+.show-image img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 25px #ff00ff, 0 0 30px #cc00ff;
 }
 
-/* Cursor + Trail */
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ff00ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00ff;
+  display: none;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+#backToTop:hover {
+  transform: scale(1.2);
+}
+
+/* Custom Cursor */
+body {
+  cursor: none;
+}
 .cursor {
   position: fixed;
   top: 0;
@@ -94,96 +188,51 @@ h2 {
   z-index: 9998;
 }
 
-/* Theme Toggle Button */
-#themeToggle {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  background-color: #222;
-  color: #00f5ff;
-  border: 2px solid #00f5ff;
-  border-radius: 5px;
-  padding: 8px 12px;
-  font-size: 1em;
-  cursor: pointer;
-  z-index: 9999;
-}
-#themeToggle:hover {
-  background-color: #00f5ff;
-  color: #000;
-}
-
-/* Back to Top Button */
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #ff00ff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5em;
-  cursor: pointer;
-  box-shadow: 0 0 10px #ff00ff;
-  display: none;
-  z-index: 9999;
-}
-#backToTop:hover {
-  transform: scale(1.2);
-}
-
-/* Light/Dark Theme */
-body.dark-theme {
-  background-color: #000;
-  color: #00f5ff;
-}
-body.light-theme {
-  background-color: #fdf6f9;
-  color: #220011;
-}
-body.light-theme nav a,
-body.light-theme h1, 
-body.light-theme h2 {
-  color: #cc0066;
-}
-body.light-theme .divider {
-  background: #cc0066;
-  box-shadow: 0 0 10px #cc0066;
-}
-body.light-theme #backToTop {
-  background-color: #cc0066;
-}
-
-
-
-/* Global font sizing adjustments */
-body, p, nav a, h3, h4 {
-  font-size: 1.1em;
-  line-height: 1.6;
-}
-
+/* Gradient Text on Title */
 h1 {
-  font-size: 3em;
+  background: linear-gradient(90deg, #00f5ff, #cc00ff, #00f5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-glow 5s infinite linear;
+  background-size: 300% 100%;
+}
+
+@keyframes gradient-glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typewriter effect for h2 */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent }
 }
 h2 {
-  font-size: 2em;
-}
-h3 {
-  font-size: 1.5em;
-}
-h4 {
-  font-size: 1.2em;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #00f5ff;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite;
 }
 
-/* Bright neon green for body links */
-a {
-  color: #39ff14;
-  text-decoration: none;
-  transition: 0.3s ease;
+/* Parallax background via perspective + tilt on scroll */
+body {
+  perspective: 1000px;
 }
-a:hover {
-  text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-  color: #76ff40;
+.parallax {
+  transform: translateZ(-1px) scale(1.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
 }
