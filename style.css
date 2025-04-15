@@ -3,10 +3,6 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: #00f5ff;
   margin: 0;
   padding: 0;
@@ -16,23 +12,19 @@ header {
   background-color: rgba(0, 0, 50, 0.9);
   padding: 20px;
   text-align: center;
-  box-shadow: 0 0 15px #00ffff;
 }
 
 header h1 {
   font-family: 'Audiowide', cursive;
-  margin: 0;
   font-size: 3em;
-  text-shadow: 0 0 8px #ff00ff;
+  margin: 0;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   background-color: rgba(0, 0, 50, 0.8);
   padding: 10px;
-  box-shadow: 0 0 10px #00ffff;
 }
 
 @keyframes pulse {
@@ -56,14 +48,7 @@ main {
 }
 
 main h2, main h3 {
-  color: #ffffff;
-  text-shadow: 0 0 5px #00ffff;
   text-align: center;
-}
-
-main p, a {
-  font-size: 1.1em;
-  line-height: 1.6;
 }
 
 .show-block {
@@ -85,12 +70,6 @@ main p, a {
   border: 2px solid #00ffff;
   box-shadow: 0 0 20px #00ffff;
   border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.show-image img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px #ff00ff;
 }
 
 .show-text {
@@ -105,5 +84,4 @@ footer {
   background-color: rgba(0, 0, 50, 0.9);
   font-size: 0.9em;
   color: #888;
-  box-shadow: 0 0 10px #00ffff;
 }
