@@ -102,3 +102,20 @@ footer {
   50%  { box-shadow: 0 0 20px #ff00ff, 0 0 30px #cc00ff; }
   100% { box-shadow: 0 0 5px #ff00ff; }
 }
+
+
+
+.floating-logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  z-index: 1000;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.floating-logo:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
