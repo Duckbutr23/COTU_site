@@ -72,6 +72,20 @@ function triggerGlitch() {
   document.body.classList.add("glitching");
   setTimeout(() => document.body.classList.remove("glitching"), 500);
 }
+    // === SECRET KEY SEQUENCES ===
+  let keySequence = "";
+  document.addEventListener("keydown", (e) => {
+    keySequence += e.key.toLowerCase();
+    if (keySequence.length > 10) keySequence = keySequence.slice(-10);
+
+    if (keySequence.includes("hex")) {
+      alert("🔓 HEX override detected. Engaging hidden subroutine...");
+    }
+    if (keySequence.includes("23")) {
+      alert("🧬 Portal 23 located. Activating anomaly scanner...");
+    }
+  });
+});
 
 
 // === PARALLAX SCROLL EFFECT ===
