@@ -43,3 +43,24 @@ document.addEventListener("scroll", function () {
     layer.style.transform = `translateY(${offset * 0.3}px) scale(1.5)`;
   }
 });
+// Theme Toggle
+const themeBtn = document.getElementById("themeToggle");
+themeBtn.onclick = () => {
+  document.body.classList.toggle("light-theme");
+  document.body.classList.toggle("dark-theme");
+};
+document.body.classList.add("dark-theme"); // default on load
+
+// Secret Key Sequence (HEX or 23)
+let keySequence = "";
+document.addEventListener("keydown", (e) => {
+  keySequence += e.key.toLowerCase();
+  if (keySequence.length > 10) keySequence = keySequence.slice(-10);
+
+  if (keySequence.includes("hex")) {
+    alert("🔓 HEX override detected. Engaging hidden subroutine...");
+  }
+  if (keySequence.includes("23")) {
+    alert("🧬 Portal 23 located. Activating anomaly scanner...");
+  }
+});
