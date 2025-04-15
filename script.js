@@ -45,20 +45,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   document.body.classList.add("dark-theme");
 
-  // === SECRET KEY SEQUENCES ===
-  let keySequence = "";
-  document.addEventListener("keydown", (e) => {
-    keySequence += e.key.toLowerCase();
-    if (keySequence.length > 10) keySequence = keySequence.slice(-10);
+// === SECRET KEY SEQUENCES UPGRADE ===
+let keySequence = "";
+document.addEventListener("keydown", (e) => {
+  keySequence += e.key.toLowerCase();
+  if (keySequence.length > 10) keySequence = keySequence.slice(-10);
 
-    if (keySequence.includes("hex")) {
-      alert("🔓 HEX override detected. Engaging hidden subroutine...");
-    }
-    if (keySequence.includes("23")) {
-      alert("🧬 Portal 23 located. Activating anomaly scanner...");
-    }
-  });
+  if (keySequence.includes("hex")) {
+    triggerGlitch();
+    setTimeout(() => {
+      const panel = document.getElementById("hexPanel");
+      if (panel) panel.style.display = "block";
+    }, 400);
+  }
+
+  if (keySequence.includes("23")) {
+    triggerGlitch();
+    setTimeout(() => {
+      const panel = document.getElementById("portalPanel");
+      if (panel) panel.style.display = "block";
+    }, 400);
+  }
 });
+
+function triggerGlitch() {
+  document.body.classList.add("glitching");
+  setTimeout(() => document.body.classList.remove("glitching"), 500);
+}
+
 
 // === PARALLAX SCROLL EFFECT ===
 document.addEventListener("scroll", function () {
