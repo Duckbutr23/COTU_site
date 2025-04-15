@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
-  color: #ff5555;
+  color: #00f5ff;
   margin: 0;
   padding: 0;
 }
@@ -28,13 +28,13 @@ nav {
 }
 
 @keyframes pulse {
-  0%   { text-shadow: 0 0 5px #ff5555; }
-  50%  { text-shadow: 0 0 20px #ff4444, 0 0 30px #ff5555; }
-  100% { text-shadow: 0 0 5px #ff5555; }
+  0%   { text-shadow: 0 0 5px #00f5ff; }
+  50%  { text-shadow: 0 0 20px #00ffff, 0 0 30px #00f5ff; }
+  100% { text-shadow: 0 0 5px #00f5ff; }
 }
 
 nav a {
-  color: #ff5555;
+  color: #00f5ff;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
@@ -67,8 +67,8 @@ main h2, main h3 {
 
 .show-image img {
   width: 250px;
-  border: 2px solid #ff4444;
-  box-shadow: 0 0 20px #ff4444;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
   border-radius: 10px;
 }
 
@@ -93,14 +93,14 @@ footer {
   margin: 20px auto;
   max-width: 80%;
   border-radius: 2px;
-  background: #ff3333;
+  background: #ff00ff;
   animation: pulse-divider 2s infinite ease-in-out;
 }
 
 @keyframes pulse-divider {
-  0%   { box-shadow: 0 0 5px #ff3333; }
-  50%  { box-shadow: 0 0 20px #ff3333, 0 0 30px #aa0022; }
-  100% { box-shadow: 0 0 5px #ff3333; }
+  0%   { box-shadow: 0 0 5px #ff00ff; }
+  50%  { box-shadow: 0 0 20px #ff00ff, 0 0 30px #cc00ff; }
+  100% { box-shadow: 0 0 5px #ff00ff; }
 }
 
 
@@ -122,11 +122,11 @@ footer {
 
 /* Neon Flicker for Headers */
 @keyframes flicker {
-  0%   { text-shadow: 0 0 2px #ff3333; }
-  10%  { text-shadow: 0 0 4px #ff3333, 0 0 10px #ff3333; }
-  20%  { text-shadow: 0 0 2px #ff3333; }
-  30%  { text-shadow: 0 0 8px #ff3333, 0 0 20px #cc00cc; }
-  100% { text-shadow: 0 0 6px #ff3333; }
+  0%   { text-shadow: 0 0 2px #ff00ff; }
+  10%  { text-shadow: 0 0 4px #ff00ff, 0 0 10px #ff00ff; }
+  20%  { text-shadow: 0 0 2px #ff00ff; }
+  30%  { text-shadow: 0 0 8px #ff00ff, 0 0 20px #cc00cc; }
+  100% { text-shadow: 0 0 6px #ff00ff; }
 }
 
 h1, h2 {
@@ -136,7 +136,7 @@ h1, h2 {
 /* Cosmic Hover Effects */
 .show-image img:hover {
   transform: scale(1.05) rotate(-1deg);
-  box-shadow: 0 0 25px #ff3333, 0 0 30px #aa0022;
+  box-shadow: 0 0 25px #ff00ff, 0 0 30px #cc00ff;
 }
 
 /* Back to Top Button */
@@ -144,7 +144,7 @@ h1, h2 {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: #ff3333;
+  background-color: #ff00ff;
   color: white;
   border: none;
   border-radius: 50%;
@@ -152,7 +152,7 @@ h1, h2 {
   height: 50px;
   font-size: 1.5em;
   cursor: pointer;
-  box-shadow: 0 0 10px #ff3333;
+  box-shadow: 0 0 10px #ff00ff;
   display: none;
   z-index: 9999;
   transition: transform 0.3s ease;
@@ -181,7 +181,7 @@ body {
   position: fixed;
   width: 8px;
   height: 8px;
-  background: #ff3333;
+  background: #ff00ff;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0.5;
