@@ -1,6 +1,52 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Audiowide&display=swap');
 
+body, p, nav a, h3, h4 {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.2em; }
+
+a {
+  color: #39ff14;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  color: #76ff40;
+}
+
+body.dark-theme {
+  background-color: #000;
+  color: #00f5ff;
+}
+
+body.light-theme {
+  background-color: #fdf6f9;
+  color: #220011;
+}
+
+body.light-theme nav a,
+body.light-theme h1, 
+body.light-theme h2 {
+  color: #cc0066;
+}
+
+body.light-theme .divider {
+  background: #cc0066;
+  box-shadow: 0 0 10px #cc0066;
+}
+
+body.light-theme #backToTop {
+  background-color: #cc0066;
+}
+
 body {
   font-family: 'Orbitron', sans-serif;
   color: #00f5ff;
@@ -120,6 +166,24 @@ footer {
   opacity: 1;
 }
 
+#themeToggle {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background-color: #222;
+  color: #00f5ff;
+  border: 2px solid #00f5ff;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 1em;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#themeToggle:hover {
+  background-color: #00f5ff;
+  color: #000;
+}
 /* Neon Flicker for Headers */
 @keyframes flicker {
   0%   { text-shadow: 0 0 2px #ff00ff; }
