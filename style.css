@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Orbitron', sans-serif;
-  color: #00f5ff;
+  color: #ff5555;
   margin: 0;
   padding: 0;
 }
@@ -28,13 +28,13 @@ nav {
 }
 
 @keyframes pulse {
-  0%   { text-shadow: 0 0 5px #00f5ff; }
-  50%  { text-shadow: 0 0 20px #00ffff, 0 0 30px #00f5ff; }
-  100% { text-shadow: 0 0 5px #00f5ff; }
+  0%   { text-shadow: 0 0 5px #ff5555; }
+  50%  { text-shadow: 0 0 20px #ff4444, 0 0 30px #ff5555; }
+  100% { text-shadow: 0 0 5px #ff5555; }
 }
 
 nav a {
-  color: #00f5ff;
+  color: #ff5555;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
@@ -67,8 +67,8 @@ main h2, main h3 {
 
 .show-image img {
   width: 250px;
-  border: 2px solid #00ffff;
-  box-shadow: 0 0 20px #00ffff;
+  border: 2px solid #ff4444;
+  box-shadow: 0 0 20px #ff4444;
   border-radius: 10px;
 }
 
@@ -93,14 +93,14 @@ footer {
   margin: 20px auto;
   max-width: 80%;
   border-radius: 2px;
-  background: #ff00ff;
+  background: #ff3333;
   animation: pulse-divider 2s infinite ease-in-out;
 }
 
 @keyframes pulse-divider {
-  0%   { box-shadow: 0 0 5px #ff00ff; }
-  50%  { box-shadow: 0 0 20px #ff00ff, 0 0 30px #cc00ff; }
-  100% { box-shadow: 0 0 5px #ff00ff; }
+  0%   { box-shadow: 0 0 5px #ff3333; }
+  50%  { box-shadow: 0 0 20px #ff3333, 0 0 30px #aa0022; }
+  100% { box-shadow: 0 0 5px #ff3333; }
 }
 
 
@@ -118,4 +118,72 @@ footer {
 .floating-logo:hover {
   transform: scale(1.05);
   opacity: 1;
+}
+
+/* Neon Flicker for Headers */
+@keyframes flicker {
+  0%   { text-shadow: 0 0 2px #ff3333; }
+  10%  { text-shadow: 0 0 4px #ff3333, 0 0 10px #ff3333; }
+  20%  { text-shadow: 0 0 2px #ff3333; }
+  30%  { text-shadow: 0 0 8px #ff3333, 0 0 20px #cc00cc; }
+  100% { text-shadow: 0 0 6px #ff3333; }
+}
+
+h1, h2 {
+  animation: flicker 2s infinite;
+}
+
+/* Cosmic Hover Effects */
+.show-image img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 25px #ff3333, 0 0 30px #aa0022;
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff3333;
+  display: none;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+#backToTop:hover {
+  transform: scale(1.2);
+}
+
+/* Custom Cursor */
+body {
+  cursor: none;
+}
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: url('oldcotufix.png') no-repeat center center / contain;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
+}
+.trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #ff3333;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 9998;
 }

@@ -7,4 +7,30 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.style.backgroundPosition = "center";
   document.body.style.backgroundRepeat = "no-repeat";
   document.body.style.backgroundAttachment = "fixed";
+
+  // Back to Top
+  const topBtn = document.getElementById("backToTop");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  };
+  topBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Custom Cursor + Trail
+  const cursor = document.getElementById("cursor");
+  document.addEventListener("mousemove", e => {
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+    const trail = document.createElement("div");
+    trail.classList.add("trail");
+    trail.style.top = e.clientY + "px";
+    trail.style.left = e.clientX + "px";
+    document.body.appendChild(trail);
+    setTimeout(() => trail.remove(), 300);
+  });
 });
