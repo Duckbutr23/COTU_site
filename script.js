@@ -37,10 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // === THEME TOGGLE ===
   const themeBtn = document.getElementById("themeToggle");
-  themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-    document.body.classList.toggle("dark-theme");
-  });
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+      document.body.classList.toggle("dark-theme");
+    });
+  }
   document.body.classList.add("dark-theme");
 
   // === SECRET KEY SEQUENCES ===
