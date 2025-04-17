@@ -322,3 +322,30 @@ footer a:hover {
     font-size: 2.5em;
   }
 }
+/* === FRINGE MODE === */
+body.fringe-mode * {
+  transform: rotate(0.2deg) skew(0.5deg);
+  animation: fringe-glitch 0.3s infinite alternate !important;
+}
+
+@keyframes fringe-glitch {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(30deg); }
+}
+
+body.fringe-mode h1, 
+body.fringe-mode h2, 
+body.fringe-mode h3 {
+  text-shadow: 
+    0 0 5px #ff00ff, 
+    0 0 15px #00ffff, 
+    0 0 25px #ff0000;
+  letter-spacing: 0.15em;
+}
+
+body.fringe-mode .show-block {
+  border: 2px dashed #ff00ff;
+  padding: 10px;
+  background: rgba(0, 0, 50, 0.2);
+}
+
