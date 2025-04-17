@@ -13,7 +13,7 @@ header h1 {
   font-family: 'Audiowide', cursive;
   margin: 0;
   font-size: 4.5em; /* 👈 increased size */
-  animation: glitch 3s infinite, colorShift 6s infinite;
+    animation: glitch 3s infinite, colorShift 6s infinite, floatyFloat 8s ease-in-out infinite;
 }
 
 /* === NEON LINK GLOW === */
@@ -85,6 +85,12 @@ body.light-theme #backToTop {
   75% { color: #39ff14; }
   100% { color: #00f5ff; }
 }
+@keyframes floatyFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
 header {
   background-image: url('/mnt/data/star-universe-background-stardust-deep-600nw-1907210152.webp');
   background-size: cover;
