@@ -1,6 +1,3 @@
-Here is the style.css
-
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Audiowide&display=swap');
 
 /* === BASE TYPOGRAPHY & FONT SIZES === */
@@ -113,6 +110,7 @@ main h2, main h3 {
   border: 2px solid #00ffff;
   box-shadow: 0 0 20px #00ffff;
   border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 .show-image img:hover {
   transform: scale(1.05) rotate(-1deg);
@@ -131,6 +129,14 @@ footer {
   background-color: rgba(0, 0, 50, 0.9);
   font-size: 0.9em;
   color: #888;
+}
+footer a {
+  color: #ff00ff;
+  padding: 0 5px;
+}
+footer a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
 }
 
 /* === DIVIDER === */
@@ -163,55 +169,45 @@ footer {
   opacity: 1;
 }
 
-/* === THEME TOGGLE BUTTON === */
-#themeToggle {
+/* === BUTTONS & CURSOR === */
+#themeToggle, #backToTop {
   position: fixed;
   bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+#themeToggle {
   left: 30px;
   background-color: #222;
   color: #00f5ff;
   border: 2px solid #00f5ff;
-  border-radius: 5px;
   padding: 8px 12px;
   font-size: 1em;
-  cursor: pointer;
-  z-index: 9999;
 }
 #themeToggle:hover {
   background-color: #00f5ff;
   color: #000;
 }
-
-/* === BACK TO TOP BUTTON === */
 #backToTop {
-  position: fixed;
-  bottom: 30px;
   right: 30px;
   background-color: #ff00ff;
   color: white;
   border: none;
-  border-radius: 50%;
   width: 50px;
   height: 50px;
   font-size: 1.5em;
-  cursor: pointer;
   box-shadow: 0 0 10px #ff00ff;
   display: none;
-  z-index: 9999;
-  transition: transform 0.3s ease;
 }
-#backToTop:hover {
-  transform: scale(1.2);
-}
+#backToTop:hover { transform: scale(1.2); }
 
-/* === CUSTOM CURSOR === */
 .cursor {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 20px;
   height: 20px;
-  background: url('oldcotufix.png') no-repeat center center / contain;
+  background: url('oldcotufix.png') center / contain;
   pointer-events: none;
   z-index: 10000;
   opacity: 0.8;
@@ -226,57 +222,4 @@ footer {
   pointer-events: none;
   opacity: 0.5;
   z-index: 9998;
-}
-
-/* === SPECIAL EFFECTS: TITLES === */
-@keyframes flicker {
-  0%   { text-shadow: 0 0 2px #ff00ff; }
-  10%  { text-shadow: 0 0 4px #ff00ff, 0 0 10px #ff00ff; }
-  20%  { text-shadow: 0 0 2px #ff00ff; }
-  30%  { text-shadow: 0 0 8px #ff00ff, 0 0 20px #cc00cc; }
-  100% { text-shadow: 0 0 6px #ff00ff; }
-}
-h1, h2 {
-  animation: flicker 2s infinite;
-}
-h1 {
-  background: linear-gradient(90deg, #00f5ff, #cc00ff, #00f5ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-glow 5s infinite linear, flicker 2s infinite;
-  background-size: 300% 100%;
-}
-@keyframes gradient-glow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink {
-  50% { border-color: transparent }
-}
-h2 {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid #00f5ff;
-  width: 0;
-  animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite;
-}
-
-/* === PARALLAX === */
-.parallax {
-  transform: translateZ(-1px) scale(1.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  pointer-events: none;
 }
