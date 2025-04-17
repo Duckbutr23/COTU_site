@@ -29,7 +29,10 @@ body {
   padding: 0;
   cursor: none;
   perspective: 1000px;
-  text-shadow: 0 0 5px rgba(255, 0, 0, 0.6); /* Red glow for readability */
+  text-shadow:
+    1px 1px 2px #ff0000,
+    -1px -1px 2px #ff0000,
+    0 0 10px rgba(255, 0, 0, 0.7);
 }
 
 /* === THEME CLASSES === */
