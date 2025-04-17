@@ -10,6 +10,13 @@ h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 h4 { font-size: 1.2em; }
 
+header h1 {
+  font-family: 'Audiowide', cursive;
+  margin: 0;
+  font-size: 4.5em; /* 👈 increased size */
+  animation: glitch 3s infinite, colorShift 6s infinite;
+}
+
 /* === NEON LINK GLOW === */
 a {
   color: #39ff14;
@@ -280,4 +287,10 @@ footer a:hover {
 .gonzo-poster:hover {
   transform: rotate(1deg) scale(1.05);
   box-shadow: 0 0 30px #00ffff, 0 0 40px #00aaff;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.5em;
+  }
 }
