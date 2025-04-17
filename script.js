@@ -130,3 +130,16 @@ function runTemporalGlitch() {
     document.body.classList.remove("temporal-glitch");
   }, 600);
 }
+
+function glitchLoop() {
+  const nextGlitch = Math.floor(Math.random() * 120000) + 60000;
+  setTimeout(() => {
+    runTemporalGlitch();
+    glitchLoop();
+  }, nextGlitch);
+}
+
+window.addEventListener("load", () => {
+  setTimeout(cluckersLoop, 5000);
+  setTimeout(glitchLoop, 10000);
+});
