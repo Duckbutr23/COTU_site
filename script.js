@@ -130,20 +130,18 @@ function runTemporalGlitch() {
   const randomLog = logs[Math.floor(Math.random() * logs.length)];
   console.log(randomLog);
 
+  const glitchBox = document.getElementById("glitch-message");
+  glitchBox.textContent = randomLog;
+  glitchBox.style.opacity = "1";
+
   document.body.classList.add("temporal-glitch");
 
   setTimeout(() => {
+    glitchBox.style.opacity = "0";
     document.body.classList.remove("temporal-glitch");
-  }, 600);
+  }, 1600);
 }
 
-function glitchLoop() {
-  const nextGlitch = Math.floor(Math.random() * 120000) + 60000;
-  setTimeout(() => {
-    runTemporalGlitch();
-    glitchLoop();
-  }, nextGlitch);
-}
 
 // === LOAD INITIALIZERS ===
 window.addEventListener("load", () => {
