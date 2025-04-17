@@ -105,6 +105,29 @@ header h1 {
   animation: glitch 3s infinite, colorShift 6s infinite;
 }
 
+
+/* === HEADER PARTICLE BURST === */
+.header-particles {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff00ff 0%, #00f5ff 80%);
+  animation: particles 1.5s ease-out forwards;
+  opacity: 0.7;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow:
+    0 0 10px #ff00ff,
+    10px 0 #00ffff,
+    -10px 0 #ff00ff,
+    0 10px #00ffff,
+    0 -10px #ff00ff;
+}
+
+
 /* === NAVIGATION === */
 nav {
   display: flex;
