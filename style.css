@@ -391,6 +391,27 @@ footer a:hover {
     font-size: 2.5em;
   }
 }
+
+#glitch-message {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Orbitron', sans-serif;
+  color: #ff00ff;
+  font-size: 1.2em;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border: 1px solid #00ffff;
+  border-radius: 5px;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #00ffff;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+
 /* === FRINGE MODE === */
 body.fringe-mode * {
   transform: rotate(0.2deg) skew(0.5deg);
