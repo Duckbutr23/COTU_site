@@ -291,6 +291,18 @@ footer a:hover {
   z-index: 9998;
 }
 
+#cluckers {
+  position: fixed;
+  bottom: 0;
+  left: -100px; /* start off-screen */
+  width: 80px;
+  height: auto;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: left 8s linear, opacity 1s ease;
+}
+
 /* === INDIVIDUAL POSTER BASE STYLES === */
 .destroy-poster {
   width: 450px !important;
