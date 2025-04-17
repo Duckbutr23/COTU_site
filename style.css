@@ -258,8 +258,8 @@ footer a:hover {
 
 /* === INDIVIDUAL POSTER BASE STYLES === */
 .destroy-poster {
-  width: 350px;
-  max-width: 90%;
+  width: 550px;
+  max-width: 100%;
   border: 3px solid #ff0033;
   box-shadow: 0 0 20px #ff0033;
 }
