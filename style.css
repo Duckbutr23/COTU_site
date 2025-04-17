@@ -27,30 +27,6 @@ a:hover {
   color: #76ff40;
 }
 
-/* === SCANLINE OVERLAY === */
-.scanlines::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 10000;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.02) 0px,
-    rgba(255, 255, 255, 0.02) 1px,
-    transparent 1px,
-    transparent 2px
-  );
-  mix-blend-mode: overlay;
-  opacity: 0.2;
-  animation: scanPulse 2s infinite alternate;
-}
-
-@keyframes scanPulse {
-
 /* === GLOBAL BODY SETTINGS === */
 body {
   font-family: 'Orbitron', sans-serif;
@@ -442,3 +418,29 @@ body.fringe-mode .show-block {
   background: rgba(0, 0, 50, 0.2);
 }
 
+/* === SCANLINE OVERLAY === */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.2;
+  animation: scanPulse 2s infinite alternate;
+}
+
+@keyframes scanPulse {
+  0% { opacity: 0.15; }
+  100% { opacity: 0.25; }
+}
