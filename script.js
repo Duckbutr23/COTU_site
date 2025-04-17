@@ -108,22 +108,25 @@ window.addEventListener("load", () => {
 });
 
 function runTemporalGlitch() {
+  const logs = [
+    "⚠ Timeline instability detected... stabilizing. ✅",
+    "🔄 Rewinding scene fragment...",
+    "🕳 Intermission Echo: /err_Stage23_Breach",
+    "🔺 COTU_BACKLINE: Prop SCP-CLKR active.",
+    "🧠 Log Memory Leak Detected: Eris→Δecho(4)",
+    "🚨 Incomplete rehearsal loop. Injecting placeholder reality...",
+    "⏳ Reality stuttered. Cue correction tape.",
+    "🔒 HEX NODE 23 SEQUENCE INTERRUPTED.",
+    "🕯 'She’s still dreaming, don’t wake her.'",
+    "💤 Fragmented Dreamstate sealed. (for now)"
+  ];
+
+  const randomLog = logs[Math.floor(Math.random() * logs.length)];
+  console.log(randomLog);
+
   document.body.classList.add("temporal-glitch");
 
   setTimeout(() => {
     document.body.classList.remove("temporal-glitch");
-  }, 600); // Duration matches animation
+  }, 600);
 }
-
-// Randomly trigger glitch every 60–180 seconds
-function glitchLoop() {
-  const nextGlitch = Math.floor(Math.random() * 120000) + 60000;
-  setTimeout(() => {
-    runTemporalGlitch();
-    glitchLoop();
-  }, nextGlitch);
-}
-
-window.addEventListener("load", () => {
-  setTimeout(glitchLoop, 10000); // Start 10s after load
-});
