@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   // === RANDOM BACKGROUND ===
   const backgrounds = ["bg1.jpg", "bg2.jpg", "bg3.jpg"];
@@ -45,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   document.body.classList.add("dark-theme");
 
-    // === SECRET KEY SEQUENCES ===
+  // === SECRET KEY SEQUENCES ===
   let keySequence = "";
   document.addEventListener("keydown", (e) => {
     keySequence += e.key.toLowerCase();
@@ -57,9 +56,28 @@ document.addEventListener("DOMContentLoaded", function () {
     if (keySequence.includes("23")) {
       alert("🧬 Portal 23 located. Activating anomaly scanner...");
     }
+    if (keySequence.includes("gonzo")) {
+      document.body.style.transform = "rotate(180deg)";
+    }
+    if (keySequence.includes("fringe")) {
+      document.body.classList.toggle("fringe-mode");
+    }
+    if (keySequence.includes("void")) {
+      document.body.classList.add("void-mode");
+    }
+    if (keySequence.includes("return")) {
+      document.body.classList.remove("void-mode");
+    }
   });
-});
 
+  // === FRINGE MODE BUTTON ===
+  const fringeBtn = document.getElementById("fringeMode");
+  if (fringeBtn) {
+    fringeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("fringe-mode");
+    });
+  }
+});
 
 // === PARALLAX SCROLL EFFECT ===
 document.addEventListener("scroll", function () {
@@ -69,44 +87,32 @@ document.addEventListener("scroll", function () {
     layer.style.transform = `translateY(${offset * 0.3}px) scale(1.5)`;
   }
 });
-const fringeBtn = document.getElementById("fringeMode");
-if (fringeBtn) {
-  fringeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("fringe-mode");
-  });
-}
 
+// === CLUCKERS ===
 function summonCluckers() {
   const cluckers = document.getElementById("cluckers");
   if (!cluckers) return;
 
-  // Reset position & fade in
   cluckers.style.left = "-100px";
   cluckers.style.opacity = "1";
 
-  // Start walk
   setTimeout(() => {
-    cluckers.style.left = "110%"; // Walk across the screen
+    cluckers.style.left = "110%";
   }, 100);
 
-  // Fade out after walk is done
   setTimeout(() => {
     cluckers.style.opacity = "0";
     cluckers.style.left = "-100px";
   }, 9000);
 }
 
-// Random delay between 1–3 mins
 function cluckersLoop() {
   summonCluckers();
   const nextDelay = Math.floor(Math.random() * 120000) + 60000;
   setTimeout(cluckersLoop, nextDelay);
 }
 
-window.addEventListener("load", () => {
-  setTimeout(cluckersLoop, 5000); // Start 5 seconds after page load
-});
-
+// === TEMPORAL GLITCH ===
 function runTemporalGlitch() {
   const logs = [
     "⚠ Timeline instability detected... stabilizing. ✅",
@@ -139,7 +145,8 @@ function glitchLoop() {
   }, nextGlitch);
 }
 
+// === LOAD INITIALIZERS ===
 window.addEventListener("load", () => {
-  setTimeout(cluckersLoop, 5000);
-  setTimeout(glitchLoop, 10000);
+  setTimeout(cluckersLoop, 5000);   // Start Cluckers after 5s
+  setTimeout(glitchLoop, 10000);    // Start Temporal Glitch after 10s
 });
