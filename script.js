@@ -107,3 +107,23 @@ window.addEventListener("load", () => {
   setTimeout(cluckersLoop, 5000); // Start 5 seconds after page load
 });
 
+function runTemporalGlitch() {
+  document.body.classList.add("temporal-glitch");
+
+  setTimeout(() => {
+    document.body.classList.remove("temporal-glitch");
+  }, 600); // Duration matches animation
+}
+
+// Randomly trigger glitch every 60–180 seconds
+function glitchLoop() {
+  const nextGlitch = Math.floor(Math.random() * 120000) + 60000;
+  setTimeout(() => {
+    runTemporalGlitch();
+    glitchLoop();
+  }, nextGlitch);
+}
+
+window.addEventListener("load", () => {
+  setTimeout(glitchLoop, 10000); // Start 10s after load
+});
