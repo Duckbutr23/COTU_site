@@ -150,3 +150,23 @@ window.addEventListener("load", () => {
   setTimeout(cluckersLoop, 5000);   // Start Cluckers after 5s
   setTimeout(glitchLoop, 10000);    // Start Temporal Glitch after 10s
 });
+
+const posterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("vhs-flicker");
+      setTimeout(() => {
+        entry.target.classList.remove("vhs-flicker");
+      }, 1000);
+    }
+  });
+}, {
+  threshold: 0.5
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".destroy-poster, .gonzo-poster").forEach(poster => {
+    posterObserver.observe(poster);
+  });
+});
+
