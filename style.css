@@ -256,3 +256,28 @@ footer a:hover {
   z-index: 9998;
 }
 
+/* === INDIVIDUAL POSTER BASE STYLES === */
+.destroy-poster {
+  width: 350px;
+  max-width: 90%;
+  border: 3px solid #ff0033;
+  box-shadow: 0 0 20px #ff0033;
+}
+
+.gonzo-poster {
+  width: 250px;
+  max-width: 90%;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* === INDIVIDUAL POSTER HOVER STYLES === */
+.destroy-poster:hover {
+  transform: rotate(-1deg) scale(1.07);
+  box-shadow: 0 0 30px #ff0033, 0 0 40px #ff0066;
+}
+
+.gonzo-poster:hover {
+  transform: rotate(1deg) scale(1.05);
+  box-shadow: 0 0 30px #00ffff, 0 0 40px #00aaff;
+}
