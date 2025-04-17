@@ -109,7 +109,7 @@ header h1 {
 /* === HEADER PARTICLE BURST === */
 .header-particles {
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 50%;
   width: 8px;
   height: 8px;
