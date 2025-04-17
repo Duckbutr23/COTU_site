@@ -29,6 +29,7 @@ body {
   padding: 0;
   cursor: none;
   perspective: 1000px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.6); /* Red glow for readability */
 }
 
 /* === THEME CLASSES === */
@@ -54,14 +55,39 @@ body.light-theme #backToTop {
 }
 
 /* === HEADER === */
+@keyframes glitch {
+  0% { transform: none; }
+  7% { transform: skew(-0.5deg, -0.9deg); }
+  10% { transform: none; }
+  27% { transform: skew(0.8deg, -0.1deg); }
+  30% { transform: none; }
+  37% { transform: skew(-0.4deg, 0.8deg); }
+  40% { transform: none; }
+  57% { transform: skew(0.5deg, 0.2deg); }
+  60% { transform: none; }
+  77% { transform: skew(-0.7deg, -0.3deg); }
+  80% { transform: none; }
+  100% { transform: none; }
+}
+@keyframes colorShift {
+  0% { color: #00f5ff; }
+  25% { color: #ff00ff; }
+  50% { color: #ff0000; }
+  75% { color: #39ff14; }
+  100% { color: #00f5ff; }
+}
 header {
-  background-color: rgba(0, 0, 50, 0.9);
-  padding: 20px;
+  background-image: url('/mnt/data/star-universe-background-stardust-deep-600nw-1907210152.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
 }
 header h1 {
   font-family: 'Audiowide', cursive;
   margin: 0;
+  animation: glitch 3s infinite, colorShift 6s infinite;
 }
 
 /* === NAVIGATION === */
@@ -126,9 +152,12 @@ main h2, main h3 {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: rgba(0, 0, 50, 0.9);
+  background-image: url('/mnt/data/star-universe-background-stardust-deep-600nw-1907210152.webp');
+  background-size: cover;
+  background-position: center;
   font-size: 0.9em;
   color: #888;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
 }
 footer a {
   color: #ff00ff;
