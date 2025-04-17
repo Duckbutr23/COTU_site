@@ -90,6 +90,16 @@ body.light-theme #backToTop {
   50%  { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
+@keyframes particles {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(5) rotate(720deg);
+  }
+}
 
 @keyframes temporal-glitch {
   0% {
@@ -131,12 +141,6 @@ header {
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 245, 255, 0.8);
 }
-header h1 {
-  font-family: 'Audiowide', cursive;
-  margin: 0;
-  animation: glitch 3s infinite, colorShift 6s infinite;
-}
-
 
 /* === HEADER PARTICLE BURST === */
 .header-particles {
@@ -333,6 +337,11 @@ footer a:hover {
   opacity: 0;
   pointer-events: none;
   transition: left 8s linear, opacity 1s ease;
+}
+
+.cursor {
+  /* Add this as a fallback: */
+  cursor: crosshair;
 }
 
 /* === INDIVIDUAL POSTER BASE STYLES === */
