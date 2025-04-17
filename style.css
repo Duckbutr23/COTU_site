@@ -101,6 +101,22 @@ body.light-theme #backToTop {
   }
 }
 
+@keyframes vhsFlicker {
+  0%   { opacity: 1; filter: none; }
+  10%  { opacity: 0.6; filter: contrast(1.5) brightness(1.2); }
+  20%  { opacity: 1; filter: grayscale(1); }
+  30%  { opacity: 0.5; filter: blur(1px) contrast(2); }
+  40%  { opacity: 1; filter: none; }
+  50%  { opacity: 0.7; filter: hue-rotate(10deg); }
+  60%  { opacity: 1; filter: none; }
+  100% { opacity: 1; filter: none; }
+}
+
+.vhs-flicker {
+  animation: vhsFlicker 0.8s ease-out;
+}
+
+
 @keyframes temporal-glitch {
   0% {
     filter: none;
