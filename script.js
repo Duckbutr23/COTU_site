@@ -75,3 +75,35 @@ if (fringeBtn) {
     document.body.classList.toggle("fringe-mode");
   });
 }
+
+function summonCluckers() {
+  const cluckers = document.getElementById("cluckers");
+  if (!cluckers) return;
+
+  // Reset position & fade in
+  cluckers.style.left = "-100px";
+  cluckers.style.opacity = "1";
+
+  // Start walk
+  setTimeout(() => {
+    cluckers.style.left = "110%"; // Walk across the screen
+  }, 100);
+
+  // Fade out after walk is done
+  setTimeout(() => {
+    cluckers.style.opacity = "0";
+    cluckers.style.left = "-100px";
+  }, 9000);
+}
+
+// Random delay between 1–3 mins
+function cluckersLoop() {
+  summonCluckers();
+  const nextDelay = Math.floor(Math.random() * 120000) + 60000;
+  setTimeout(cluckersLoop, nextDelay);
+}
+
+window.addEventListener("load", () => {
+  setTimeout(cluckersLoop, 5000); // Start 5 seconds after page load
+});
+
