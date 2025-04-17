@@ -69,3 +69,9 @@ document.addEventListener("scroll", function () {
     layer.style.transform = `translateY(${offset * 0.3}px) scale(1.5)`;
   }
 });
+const fringeBtn = document.getElementById("fringeMode");
+if (fringeBtn) {
+  fringeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("fringe-mode");
+  });
+}
