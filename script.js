@@ -168,3 +168,49 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// === GLITCH TITLE SHUFFLER ===
+document.addEventListener("DOMContentLoaded", () => {
+  const glitchText = document.querySelector('.glitch');
+  if (glitchText) {
+    const messages = [
+      "ABOUT US",
+      "ACCESSING COTU RECORDS...",
+      "FILE DAMAGED",
+      "WELCOME TO THE VOID",
+      "404_UNSCRIPTED_MODE",
+      "LOADING.EXE",
+      "???",
+      "ERROR: CITIZEN DATA LOST"
+    ];
+    let i = 0;
+
+    setInterval(() => {
+      glitchText.textContent = messages[i];
+      i = (i + 1) % messages.length;
+    }, 3000);
+  }
+
+  // === GHOST FRAGMENT GENERATOR ===
+  const ghosts = [
+    "fragment.recovered: /projects/eye.heart.zombie",
+    "warning: 'Shifty Glances' actor ID mismatch",
+    "trace[CARDERIA_SHIP_23]: signal lost",
+    "Project: New Blood Productions - initiated",
+    "ERROR: Illuminatus decryption incomplete",
+    "404_GONZO_PHASE_3: unauthorized access",
+    "note:// syndicate linked to [UNKNOWN]",
+    "artifact.xxy? → ‘Little Green Zanni’ protocol"
+  ];
+
+  const chaosContainer = document.querySelector('.chaos-container');
+  if (chaosContainer) {
+    ghosts.forEach((ghost, index) => {
+      const g = document.createElement('div');
+      g.className = 'ghost-fragment';
+      g.textContent = ghost;
+      g.style.animationDelay = `${index * 4}s`;
+      chaosContainer.appendChild(g);
+    });
+  }
+});
+
