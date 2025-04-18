@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon - Citizens of the Universe</title>
+  <title>Coming Soon & The Future - Citizens of the Universe</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -52,6 +52,42 @@
       color: #fffb91;
       margin-top: 20px;
     }
+    .poster-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .poster {
+      background-color: #111;
+      border: 2px solid #39ff14;
+      box-shadow: 0 0 15px #39ff14;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+    .poster:hover {
+      transform: scale(1.05);
+    }
+    .poster img {
+      width: 100%;
+      display: block;
+    }
+    .poster-title {
+      padding: 1rem;
+      background: #000;
+      color: #39ff14;
+      font-weight: bold;
+      font-size: 1rem;
+      text-shadow: 0 0 5px #39ff14;
+    }
+    footer {
+      margin: 4rem 0;
+      font-size: 0.9rem;
+      color: #888;
+    }
   </style>
 </head>
 <body>
@@ -96,5 +132,47 @@
       <li>Trainspotting</li>
     </ul>
   </div>
+
+  <h2>The Future</h2>
+  <div class="poster-grid">
+    <div class="poster">
+      <img src="broken.jpg" alt="The Broken Mountain">
+      <div class="poster-title">The Broken Mountain</div>
+    </div>
+
+    <div class="poster">
+      <img src="duk2iykt.jpg" alt="Du(k3u++eR Industries">
+      <div class="poster-title">Du(k3u++eR Industries</div>
+    </div>
+
+    <div class="poster">
+      <img src="neo (1) (1).jpg" alt="Sherlock: A COTU Original">
+      <div class="poster-title">Sherlock: A COTU Original</div>
+    </div>
+
+    <div class="poster">
+      <img src="Ripped-From-The-Headlines-1.jpg" alt="Ripped from the Headlines">
+      <div class="poster-title">Ripped from the Headlines</div>
+    </div>
+
+    <div class="poster">
+      <img src="rs=w_600,cg_true.webp" alt="Illuminatus!">
+      <div class="poster-title">Illuminatus!</div>
+    </div>
+
+    <div class="poster">
+      <img src="rs=w_600,h_300,cg_true.webp" alt="Eye. Heart. Zombie.">
+      <div class="poster-title">Eye. Heart. Zombie.</div>
+    </div>
+
+    <div class="poster">
+      <img src="35227299_10156504077477491_8434464983567302656_n.jpg" alt="The Syndicate">
+      <div class="poster-title">The Syndicate</div>
+    </div>
+  </div>
+
+  <footer>
+    A Citizens of the Universe Project &copy; 2025
+  </footer>
 </body>
 </html>
