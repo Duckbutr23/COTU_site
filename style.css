@@ -573,3 +573,29 @@ body.fringe-mode .show-block {
   80% { opacity: 0.6; }
   100% { opacity: 0.9; }
 }
+
+.glitch {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff3cac;
+  text-shadow: 0 0 10px #ff3cac, 0 0 20px #00eaff;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.ghost-fragment {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #00eaff;
+  opacity: 0;
+  animation: fadeInGhost 2s ease forwards;
+  margin: 5px 0;
+}
+
+@keyframes fadeInGhost {
+  to {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
